@@ -1,0 +1,38 @@
+import = ["/home/mushfiq/.config/alacritty/catppuccin-mocha.toml"]
+
+[window]
+startup_mode = "Maximized"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+blink_timeout = 0
+thickness = 0.1
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[shell]
+program = "/usr/local/bin/tmux"
+
+[font]
+builtin_box_drawing = true
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "SemiBold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Light Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Light"

@@ -1,0 +1,160 @@
+(defcfg
+  log-layer-changes no
+  danger-enable-cmd no
+  process-unmapped-keys yes
+)
+
+
+(defvar
+  ;; Mod keys
+  tt1   200
+  ht1   500
+
+  ;; Shift keys
+  tt2   200
+  ht2   300
+
+)
+
+
+(defalias
+
+  ;; Shift keys
+  ;; rst   (tap-hold-press-timeout    $tt2 $ht2 C-M-rght (multi rsft (layer-while-held rsftPressed)) rsft)
+  ;; lst   (tap-hold-press-timeout    $tt2 $ht2 C-M-left (multi lsft (layer-while-held lsftPressed)) lsft)
+  rst   (tap-hold-press  $tt2 $ht2 rsft (multi rsft (layer-while-held rsftPressed)))
+  lst   (tap-hold-press  $tt2 $ht2 lsft (multi lsft (layer-while-held lsftPressed)))
+  ;; lft   (multi  (release-key rsft) M-A-left)
+  ;; rht   (multi  (release-key lsft) M-A-rght)
+  lft   M-pgup
+  rht   M-pgdn
+
+
+  ;; CapsLock key
+  cap   (tap-hold-press $tt1 $ht1 esc (multi ctl (layer-while-held capsPressed)))
+  cph   (multi (release-key ctl) left)
+  cpj   (multi (release-key ctl) down)
+  cpk   (multi (release-key ctl) up)
+  cpl   (multi (release-key ctl) rght)
+  crs   (multi (release-key ctl) C-A-rght)
+
+
+  ;; Tab key
+  ;; tab   (tap-hold $tt1 $tt1 tab (tap-hold-press-timeout 1 $ht1 tab (multi alt (layer-while-held tabPressed)) tab))
+  tab   (tap-dance 200 ((tap-hold-press-timeout $tt1 $ht1 tab (multi alt (layer-while-held tabPressed)) tab) (tap-hold-press-timeout $tt1 $ht1 (macro tab tab) (multi alt (layer-while-held tabPressedTwice)) tab)))
+  tph   (multi (release-key alt) C-h)
+  tpj   (multi (release-key alt) C-j)
+  tpk   (multi (release-key alt) C-k)
+  tpl   (multi (release-key alt) C-l)
+
+
+  ;; Return key
+  ;; rt    (tap-hold $tt1 $tt1 ret (tap-hold-press-timeout 1 $ht1 ret (multi ctl (layer-while-held retPressed)) ret))
+  rt   (tap-hold-press-timeout $tt1 $ht1 ret (multi ctl (layer-while-held retPressed)) ret)
+  rls   (multi (release-key ctl) C-A-left)
+
+
+  ;; Backslash key
+  ;; \    (tap-hold $tt1 $tt1 \ (tap-hold-press-timeout 1 $ht1 \ (multi alt (layer-while-held backslashPressed)) \))
+  \   (tap-hold-release-timeout $tt1 $ht1 \ (multi alt (layer-while-held backslashPressed)) \)
+
+
+  ;; grv   (tap-hold-press-timeout $tt1 $ht1 ` (layer-while-held backtikPressed) `)
+)
+
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+
+(deflayer primary
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  @tab q    w    e    r    t    y    u    i    o    p    [    ]    @\
+  @cap a    s    d    f    g    h    j    k    l    ;    '    @rt
+  @lst z    x    c    v    b    n    m    ,    .    /    @rst
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+
+
+
+(deflayer retPressed
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @rls _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+
+(deflayer capsPressed
+  _    _    _    _    _    _    _    _    _    _    _    _    _    lrld
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    @cph @cpj @cpk @cpl _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    @crs
+  _    _    _              _              _    _    _
+)
+
+
+;; (deflayer tabPressedTwice
+;;   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+;;   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+;;   XX    XX    XX    XX    XX    XX    _     _     _     _     XX    XX    XX
+;;   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+;;   XX    XX    XX                XX                XX    XX    XX
+;; )
+
+;; (deflayer backtikPressed
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _    _    _    _    left down up  rght  _    _    _
+;;   _    _    _    _    _    _    _    _    _    _    _    _
+;;   _    _    _              _              _    _    _
+;; )
+
+(deflayer tabPressed
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    @tph @tpj @tpk @tpl _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+
+(deflayer tabPressedTwice
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    _     _     _     _     XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX                XX                XX    XX    XX
+)
+
+(deflayer backslashPressed
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+(deflayer rsftPressed
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @lft _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _
+)
+
+(deflayer lsftPressed
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    @rht
+  _    _    _              _              _    _    _
+)
+

@@ -1,0 +1,26 @@
+# Ignore everything
+/*
+/*/
+
+# But not these files and folders ...
+!.gitignore
+
+!alacritty/
+alacritty/*
+!alacritty/alacritty.toml
+!alacritty/catppuccin-mocha.toml
+
+!/Kanata/
+
+!/nvim/
+
+!systemd/
+systemd/*
+!systemd/user/
+systemd/user/*
+!systemd/user/kanata.service
+
+!tmux/
+tmux/*
+!tmux/tmux.conf
+

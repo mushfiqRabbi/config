@@ -1,6 +1,7 @@
 # Ignore everything
 /*
 /*/
+/nvim/lazy-lock.json
 
 # But not these files and folders ...
 !.gitignore

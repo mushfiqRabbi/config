@@ -23,16 +23,16 @@ builtin_box_drawing = true
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
-style = "Bold"
+style = "SemiBold"
 
 [font.bold_italic]
 family = "JetBrainsMono Nerd Font"
-style = "Bold Italic"
+style = "SemiBold Italic"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
-style = "Italic"
+style = "Light Italic"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
+style = "Light"

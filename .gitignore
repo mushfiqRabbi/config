@@ -8,6 +8,7 @@
 !alacritty/
 alacritty/*
 !alacritty/alacritty.toml
+!alacritty/alacritty_neovim.toml
 !alacritty/catppuccin-mocha.toml
 
 !/Kanata/

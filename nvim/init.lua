@@ -874,10 +874,15 @@ vim.keymap.set(
   "<cmd>lua require('telescope.builtin').oldfiles()<cr>",
   { desc = "[F]ind recently [O]pened files" }
 )
-vim.keymap.set("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", { desc = "[F]ind  [B]buffer" })
 vim.keymap.set(
   "n",
   "<leader><space>",
+  "<cmd>lua require('telescope.builtin').buffers()<cr>",
+  { desc = "[] Find  buffer" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>.",
   "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>",
   { desc = "[] Fuzzy find in current buffer" }
 )

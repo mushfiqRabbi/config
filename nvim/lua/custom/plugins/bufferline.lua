@@ -69,6 +69,7 @@ return {
           end,
         },
         separator_style = "slope",
+        sort_by = "insert_after_current",
       },
     })
     vim.keymap.set({ "n", "i", "v" }, "<C-l>", "<cmd>BufferLineCycleNext<cr>", { noremap = true, silent = true })

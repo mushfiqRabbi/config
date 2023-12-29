@@ -16,6 +16,7 @@ return {
         percentage = 0.001, -- percentage of the shade to apply to the inactive window
       },
       integrations = {
+        barbar = true,
         fidget = true,
         lsp_trouble = true,
         mason = true,

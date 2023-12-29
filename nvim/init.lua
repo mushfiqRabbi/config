@@ -1553,7 +1553,11 @@ vim.keymap.set(
 require("lspconfig.ui.windows").default_options.border = "single"
 
 vim.o.winblend = 7
--- vim.o.pumblend = 7
+vim.o.pumblend = 7
+
+vim.cmd([[
+  vnoremap y mcy`c
+]])
 
 -- vim.cmd([[
 -- let g:clipboard = {

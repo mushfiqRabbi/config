@@ -41,8 +41,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 -- local auto_diag_float
-vim.g["python3_host_prog"] = "/home/mushfiq/.pyenv/versions/py3nvim/bin/python"
-vim.g["node_host_prog"] = "/home/mushfiq/.nvm/versions/node/v16.20.2/bin/neovim-node-host"
+vim.g["python3_host_prog"] = "~/.pyenv/versions/py3nvim/bin/python"
+vim.g["node_host_prog"] = "~/.nvm/versions/node/v16.20.2/bin/neovim-node-host"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.opt.splitright = true
@@ -340,7 +340,7 @@ require("lazy").setup({
     main = "ibl",
     opts = {
       indent = {
-        char = "│",
+        char = "▏",
       },
       scope = {
         show_start = false,
@@ -1538,10 +1538,10 @@ vim.keymap.set({ "n", "v" }, "<leader>M", "<cmd>Mason<cr>", { noremap = true, de
 -- vim.cmd("hi DiagnosticUnderlineInfo cterm=undercurl gui=undercurl guisp=#91d7e3")
 vim.cmd("hi FloatTitle gui=bold guifg=#89b4fa")
 
--- vim.cmd 'set list'
--- vim.cmd 'set listchars=leadmultispace:ᐧ'
-vim.o.list = true
-vim.o.listchars = "leadmultispace:·"
+-- vim.cmd("set list")
+-- vim.cmd("set listchars=leadmultispace:ᐧ")
+-- vim.o.list = true
+-- vim.o.listchars = "leadmultispace:·"
 
 vim.keymap.set(
   "n",

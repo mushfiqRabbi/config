@@ -15,7 +15,7 @@ unfocused_hollow = false
 blinking = "Always"
 shape = "Block"
 
-[shell]
+# [shell]
 # program = "/usr/local/bin/tmux"
 
 [font]

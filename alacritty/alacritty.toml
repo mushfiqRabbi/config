@@ -22,17 +22,17 @@ shape = "Block"
 builtin_box_drawing = true
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Regular"

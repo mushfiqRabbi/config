@@ -24,17 +24,17 @@ program = "/usr/bin/nvim"
 builtin_box_drawing = true
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "SemiBold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "SemiBold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Light Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMonoNL Nerd Font"
 style = "Light"

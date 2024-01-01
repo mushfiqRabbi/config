@@ -16,7 +16,7 @@ blinking = "Always"
 shape = "Block"
 
 [shell]
-program = "/usr/local/bin/tmux"
+# program = "/usr/local/bin/tmux"
 
 [font]
 builtin_box_drawing = true

@@ -15,9 +15,9 @@ unfocused_hollow = false
 blinking = "Always"
 shape = "Block"
 
-[shell]
-program = "/usr/local/bin/tmux"
-args = ["new", "--", "nvim"]
+# [shell]
+# program = "/usr/local/bin/tmux"
+# args = ["new", "--", "nvim"]
 
 [font]
 builtin_box_drawing = true
